@@ -5,15 +5,13 @@
 }
 
 :root {
-  /* Variables de colores */
+  /* Variables existentes (Tasks 1-16) */
   --color-primary: #d73953;
   --color-black: #090909;
   --color-white: #ffffff;
   --color-light-grey: #f3f3f3;
   --color-dark-grey: #353535;
   --text-color: var(--color-black);
-
-  /* Variables de tipografía */
   --font-family-base: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   --font-family-title: 'Raleway', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   --font-size-small: 1.2rem;
@@ -23,29 +21,22 @@
   --font-size-xx-large: 4.8rem;
   --font-weight-regular: 400;
   --font-weight-bold: 700;
-
-  /* Variables de línea */
   --line-height-small: 1.2;
   --line-height-base: 1.5;
   --line-height-big: 1.8;
+  --section-header-align: center;
+  --section-tagline-transform: uppercase;
 
-  /* Variables de sección (Task 17) */
+  /* NUEVAS VARIABLES PARA TASK 17 */
   --section-padding: 5rem 0;
   --section-header-padding: 0 0 3rem;
   --section-body-padding: 0 0 3rem;
   --section-footer-padding: 3rem 0 0;
   --section-footer-align: center;
   --footer-padding: 5rem 0 1rem;
-
-  /* Variables de header (Task 28) */
-  --header-padding: 4rem 0 0;
-  --header-logo-position: relative;
-  --header-logo-link-display: inline-block;
-  --header-logo-link-position: absolute;
-  --header-logo-link-top: -1rem;
-  --header-logo-link-left: 0;
 }
 
+/* Resto del CSS existente (Tasks 1-16)... */
 html {
   scroll-behavior: smooth;
   font-size: 62.5%;
@@ -89,24 +80,6 @@ a:active {
   color: var(--color-primary);
 }
 
-.section {
-  padding: var(--section-padding); /* Task 17 */
-}
-
-.section-header {
-  padding: var(--section-header-padding); /* Task 17 */
-  text-align: var(--section-header-align);
-}
-
-.section-body {
-  padding: var(--section-body-padding); /* Task 17 */
-}
-
-.section-footer {
-  padding: var(--section-footer-padding); /* Task 17 */
-  text-align: var(--section-footer-align);
-}
-
 .section-title {
   font-family: var(--font-family-title);
   font-size: var(--font-size-xx-large);
@@ -128,6 +101,24 @@ a:active {
   margin-right: auto;
 }
 
+/* NUEVAS REGLAS PARA TASK 17 */
+.section {
+  padding: var(--section-padding);
+}
+
+.section-header {
+  padding: var(--section-header-padding);
+}
+
+.section-body {
+  padding: var(--section-body-padding);
+}
+
+.section-footer {
+  padding: var(--section-footer-padding);
+  text-align: var(--section-footer-align);
+}
+
 .footer {
-  padding: var(--footer-padding); /* Task 17 */
+  padding: var(--footer-padding);
 }
