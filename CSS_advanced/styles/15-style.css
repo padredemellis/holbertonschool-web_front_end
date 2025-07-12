@@ -1,7 +1,9 @@
 @import url('https://necolas.github.io/normalize.css/8.0.1/normalize.css');
-* {
+
+*, *::before, *::after {
   box-sizing: border-box;
 }
+
 :root {
   --color-primary: #d73953;
   --color-black: #090909;
