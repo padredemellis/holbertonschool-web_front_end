@@ -1,0 +1,4 @@
+/* Task 1: Implement smooth scrolling for the entire document */
+html {
+    scroll-behavior: smooth;
+}
