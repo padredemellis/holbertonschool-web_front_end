@@ -434,3 +434,18 @@ a:active {
 .card-work:hover .card-outer {
   transform: scale(0.95);
 }
+.card-work:hover .card-image {
+  transform: scale(1.2);
+  transition: transform var(--transition-duration) var(--transition-cubic-bezier);
+}
+
+/* Transición para el contenedor exterior */
+.card-work:hover .card-outer {
+  transform: scale(0.95);
+  transition: transform var(--transition-duration) var(--transition-cubic-bezier);
+}
+
+/* Transición para el contenido interior */
+.card-work .card-inner {
+  transition: opacity var(--transition-duration) var(--transition-cubic-bezier);
+}
