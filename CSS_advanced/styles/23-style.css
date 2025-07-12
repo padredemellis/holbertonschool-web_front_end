@@ -1,12 +1,11 @@
 @import url('https://necolas.github.io/normalize.css/8.0.1/normalize.css');
 
-/* Reset universal de box-sizing (Task 15) */
 *, *::before, *::after {
   box-sizing: border-box;
 }
 
 :root {
-  /* Variables de color (Tasks 2-3) */
+  /* Variables de color */
   --color-primary: #d73953;
   --color-black: #090909;
   --color-white: #ffffff;
@@ -14,7 +13,7 @@
   --color-dark-grey: #353535;
   --text-color: var(--color-black);
 
-  /* Variables tipográficas (Tasks 4-7) */
+  /* Variables tipográficas */
   --font-family-base: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   --font-family-title: 'Raleway', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   --font-size-small: 1.2rem;
@@ -28,7 +27,7 @@
   --line-height-base: 1.5;
   --line-height-big: 1.8;
 
-  /* Variables de sección (Tasks 10-17) */
+  /* Variables de sección */
   --section-header-align: center;
   --section-tagline-transform: uppercase;
   --section-title-margin: 0;
@@ -40,23 +39,31 @@
   --section-footer-align: center;
   --footer-padding: 5rem 0 1rem;
 
-  /* Variables de navegación (Task 18) */
+  /* Variables de navegación */
   --nav-item-font-family: var(--font-family-title);
   --nav-item-font-weight: var(--font-weight-bold);
   --nav-item-font-size: var(--font-size-medium);
   --nav-item-letter-spacing: 0.04em;
   --nav-item-display: inline-block;
   --nav-item-margin: 0 0 3rem 0;
-  --nav-item-link-hover: var(--color-primary);
+  --nav-item-link-hover: var(--color-white);
 }
 
-/* Base HTML (Tasks 1, 5) */
+/* Tema oscuro (Task 22) */
+[data-section-theme="dark"] {
+  --text-color: var(--color-white);
+  --section-title-color: var(--color-white);
+  background-color: var(--color-black);
+  --nav-item-link-hover: var(--color-white);
+}
+
+/* Base HTML */
 html {
   scroll-behavior: smooth;
   font-size: 62.5%;
 }
 
-/* Estilos de cuerpo (Tasks 2-8) */
+/* Estilos de cuerpo */
 body {
   color: var(--text-color);
   font-family: var(--font-family-base);
@@ -65,13 +72,13 @@ body {
   line-height: var(--line-height-base);
 }
 
-/* Encabezados (Tasks 4,6) */
+/* Encabezados */
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-family-title);
   font-weight: var(--font-weight-bold);
 }
 
-/* Enlaces (Tasks 2,9,13) */
+/* Enlaces */
 a {
   color: var(--text-color);
   text-decoration: none;
@@ -89,7 +96,7 @@ a:active {
   background-color: var(--color-light-grey);
 }
 
-/* Clases utilitarias (Tasks 2-3) */
+/* Clases utilitarias */
 .visually-hidden {
   display: none;
 }
@@ -105,7 +112,7 @@ a:active {
   font-weight: var(--font-weight-bold);
 }
 
-/* Sistema de grid (Tasks 19-21) */
+/* Sistema de grid */
 [class^="col-"] {
   float: left;
   padding: 0.5rem;
@@ -125,7 +132,7 @@ a:active {
   clear: both;
 }
 
-/* Estilos de sección (Tasks 10-17) */
+/* Estilos de sección */
 .section {
   padding: var(--section-padding);
 }
@@ -152,14 +159,14 @@ a:active {
   color: var(--section-title-color);
 }
 
-/* Contenedor (Task 16) */
+/* Contenedor */
 .container {
   width: 960px;
   margin-left: auto;
   margin-right: auto;
 }
 
-/* Navegación (Task 18) */
+/* Navegación */
 .navbar-menu {
   float: right;
 }
@@ -183,15 +190,36 @@ a:active {
 .nav .nav-link {
   display: block;
   padding: 0.5rem 1rem;
+  position: relative;
 }
 
 .nav .nav-link:hover {
   color: var(--nav-item-link-hover);
 }
 
-/* Footer (Tasks 17,19) */
+.nav .nav-link::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: var(--color-white);
+  width: 0;
+  height: 0.2rem;
+  transition: var(--transition-duration) var(--transition-cubic-bezier);
+}
+
+.nav .nav-item:hover .nav-link::before {
+  background-color: var(--color-primary);
+  width: 100%;
+}
+
+/* Footer */
 .footer {
   padding: var(--footer-padding);
+}
+
+.footer-address {
+  color: var(--text-color);
 }
 
 .footer-copyright {
@@ -203,15 +231,8 @@ a:active {
 .footer ul {
   text-align: right;
 }
-[data-section-theme="dark"] {
-  --text-color: var(--color-white);
-  --section-title-color: var(--color-white);
-  background-color: var(--color-black);
-}
-.footer-address {
-  color: var(--text-color);
-}
 
+/* SOLUCIÓN AL ERROR (Task 23) */
 .social-link {
   display: block;
 }
