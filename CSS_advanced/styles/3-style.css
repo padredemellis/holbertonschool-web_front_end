@@ -1,0 +1,33 @@
+/* Task 1: Implement smooth scrolling for the entire document */
+html {
+    scroll-behavior: smooth;
+}
+/*Task 3: */
+:root{
+    --color-primary:#D73953;
+    --color-back:#090909;
+    --color-white:#fffff;
+    --color-light-grey: #f3f3f3;
+    --color-dark-grey:#353535;
+    --text-color:var(--color-black);
+}
+
+body {
+    color: var(--text-color);
+}
+
+a {
+    color: var(--text-color);
+}
+
+.visually-hidden {
+    display: none;
+}
+
+.card-category {
+    color: #D73953;
+}
+
+.section-tagline {
+    color: var(--color-primary);
+}
