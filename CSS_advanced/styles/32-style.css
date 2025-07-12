@@ -47,7 +47,7 @@
   --nav-item-display: inline-block;
   --nav-item-margin: 0 0 3rem 0;
   --nav-item-link-hover: var(--color-white);
-  
+
   /* Variables de button */
   --button-display: inline-block;
   --button-padding: 1.5rem 3rem;
@@ -58,21 +58,12 @@
   --button-hover-color: var(--color-white);
   --button-hover-text-decoration: none;
   --button-hover-background: var(--color-primary);
-  
-  /* Variables de cabeceras y logo */
-  --header-padding: 4rem 0 0;
-  --header-logo-position: relative;
-  --header-logo-link-display: inline-block;
-  --header-logo-link-position: absolute;
-  --header-logo-link-top: -1rem;
-  --header-logo-link-left: 0;
-  
-  /* ===== TASK 32: TRANSITION VARIABLES ===== */
+
+  /* Variables de transición (Task 32) */
   --transition-duration: 0.3s;
   --transition-cubic-bezier: cubic-bezier(0.17, 0.67, 0, 1.01);
 }
 
-/* Tema oscuro (Task 22) */
 [data-section-theme="dark"] {
   --text-color: var(--color-white);
   --section-title-color: var(--color-white);
@@ -81,13 +72,11 @@
   --button-color: var(--color-white);
 }
 
-/* Base HTML */
 html {
   scroll-behavior: smooth;
   font-size: 62.5%;
 }
 
-/* Estilos de cuerpo */
 body {
   color: var(--text-color);
   font-family: var(--font-family-base);
@@ -96,13 +85,11 @@ body {
   line-height: var(--line-height-base);
 }
 
-/* Encabezados */
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-family-title);
   font-weight: var(--font-weight-bold);
 }
 
-/* Enlaces */
 a {
   color: var(--text-color);
   text-decoration: none;
@@ -120,7 +107,6 @@ a:active {
   background-color: var(--color-light-grey);
 }
 
-/* Clases utilitarias */
 .visually-hidden {
   display: none;
 }
@@ -136,7 +122,6 @@ a:active {
   font-weight: var(--font-weight-bold);
 }
 
-/* Sistema de grid */
 [class^="col-"] {
   float: left;
   padding: 0.5rem;
@@ -156,7 +141,6 @@ a:active {
   clear: both;
 }
 
-/* Estilos de sección */
 .section {
   padding: var(--section-padding);
 }
@@ -183,14 +167,12 @@ a:active {
   color: var(--section-title-color);
 }
 
-/* Contenedor */
 .container {
   width: 960px;
   margin-left: auto;
   margin-right: auto;
 }
 
-/* Navegación */
 .navbar-menu {
   float: right;
 }
@@ -221,7 +203,6 @@ a:active {
   color: var(--nav-item-link-hover);
 }
 
-/* ===== TASK 32: NAVIGATION TRANSITION ===== */
 .nav .nav-link::before {
   content: "";
   position: absolute;
@@ -230,7 +211,6 @@ a:active {
   background-color: var(--color-white);
   width: 0;
   height: 0.2rem;
-  /* Transition effect for navigation underline */
   transition: var(--transition-duration) var(--transition-cubic-bezier);
 }
 
@@ -239,7 +219,6 @@ a:active {
   width: 100%;
 }
 
-/* Footer */
 .footer {
   padding: var(--footer-padding);
 }
@@ -258,7 +237,6 @@ a:active {
   text-align: right;
 }
 
-/* Social Links */
 .social-link {
   display: block;
 }
@@ -267,7 +245,6 @@ a:active {
   fill: var(--text-color);
 }
 
-/* Services Cards */
 .card-services .card-title {
   margin: 0;
 }
@@ -284,7 +261,6 @@ a:active {
   text-decoration: none;
 }
 
-/* Buttons */
 .button {
   display: var(--button-display);
   padding: var(--button-padding);
@@ -292,11 +268,8 @@ a:active {
   font-size: var(--button-font-size);
   color: var(--button-color);
   text-decoration: var(--button-text-decoration);
-  
-  /* ===== TASK 32: BUTTON TRANSITION ===== */
-  transition: 
-    color var(--transition-duration),
-    background-color var(--transition-duration);
+  transition-property: background-color, color;
+  transition-duration: var(--transition-duration);
 }
 
 .button:hover {
@@ -305,7 +278,6 @@ a:active {
   background: var(--button-hover-background);
 }
 
-/* Testimonials */
 .card-testimonial {
   text-align: center;
 }
@@ -336,7 +308,6 @@ a:active {
   z-index: -1;
 }
 
-/* Hero Section */
 .section-hero {
   background-size: 90rem auto;
 }
@@ -349,7 +320,6 @@ a:active {
   padding: 10rem 40rem 2rem 0;
 }
 
-/* Header */
 .header {
   padding: var(--header-padding);
 }
@@ -365,13 +335,10 @@ a:active {
   left: var(--header-logo-link-left);
 }
 
-/* Work Cards */
 .card-work .card-outer {
   position: relative;
   overflow: hidden;
-  
-  /* ===== TASK 32: CARD OUTER TRANSITION ===== */
-  transition: transform var(--transition-duration) var(--transition-cubic-bezier);
+  transition: var(--transition-duration) var(--transition-cubic-bezier);
 }
 
 .card-work .card-image img {
@@ -379,9 +346,7 @@ a:active {
   width: 100%;
   object-fit: cover;
   vertical-align: bottom;
-  
-  /* ===== TASK 32: CARD IMAGE TRANSITION ===== */
-  transition: transform var(--transition-duration) var(--transition-cubic-bezier);
+  transition: var(--transition-duration) var(--transition-cubic-bezier);
 }
 
 .card-work .card-inner {
@@ -390,9 +355,7 @@ a:active {
   left: -0.1rem;
   right: -0.1rem;
   z-index: 1;
-  
-  /* ===== TASK 32: CARD INNER TRANSITION ===== */
-  transition: opacity var(--transition-duration) var(--transition-cubic-bezier);
+  transition: var(--transition-duration) var(--transition-cubic-bezier);
 }
 
 .card-work:hover .card-inner {
@@ -426,26 +389,11 @@ a:active {
   opacity: 1;
 }
 
-/* ===== TASK 32: CARD HOVER TRANSFORMATIONS ===== */
+/* ===== TASK 32: TRANSFORMACIONES FINALES ===== */
 .card-work:hover .card-image img {
   transform: scale(1.2);
 }
 
 .card-work:hover .card-outer {
   transform: scale(0.95);
-}
-.card-work:hover .card-image {
-  transform: scale(1.2);
-  transition: transform var(--transition-duration) var(--transition-cubic-bezier);
-}
-
-/* Transición para el contenedor exterior */
-.card-work:hover .card-outer {
-  transform: scale(0.95);
-  transition: transform var(--transition-duration) var(--transition-cubic-bezier);
-}
-
-/* Transición para el contenido interior */
-.card-work .card-inner {
-  transition: opacity var(--transition-duration) var(--transition-cubic-bezier);
 }
